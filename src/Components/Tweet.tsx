@@ -10,8 +10,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     borderRight: 0,
+    borderTop: 0,
     borderLeft: 0,
-    padding: 10,
+    padding: '15px 20px',
     '&:hover': { backgroundColor: 'rgb(245,248,250)' },
     cursor: 'pointer',
   },
@@ -33,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
   actionButton: {
     padding: 6,
+    paddingBottom: 0,
     '& svg': {
       fontSize: 20,
     },
