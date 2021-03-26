@@ -1,7 +1,7 @@
 import { Box, Button, Container, makeStyles, TextField, Typography } from '@material-ui/core';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import React, { useState } from 'react';
-import { SignDialog } from '../Components/SignDialog';
+import { DialogBlock } from '../Components/DialogBlock';
 
 const useStyles = makeStyles((theme) => ({
   wrapper: {
@@ -81,12 +81,12 @@ export function SignIn() {
               Войти
             </Button>
           </Box>
-          <SignDialog
+          <DialogBlock
             title={'Войти в Твиттер'}
             visible={visible === 'signIn'}
             handleCloseDialog={handleCloseDialog}
           >
-            <div>
+            <div style={{padding: 20}}>
               <TextField
                 variant="outlined"
                 autoFocus
@@ -114,13 +114,14 @@ export function SignIn() {
                 Войти
               </Button>
             </div>
-          </SignDialog>
-          <SignDialog
+          </DialogBlock>
+          <DialogBlock
             title={'Создайте учетную запись'}
             visible={visible === 'signUp'}
             handleCloseDialog={handleCloseDialog}
+            
           >
-            <div>
+            <div style={{padding: 20}}>
               <TextField
                 variant="outlined"
                 autoFocus
@@ -148,7 +149,7 @@ export function SignIn() {
                 Далее
               </Button>
             </div>
-          </SignDialog>
+          </DialogBlock>
         </div>
       </div>
     </div>

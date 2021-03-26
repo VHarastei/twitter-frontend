@@ -21,13 +21,15 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import CreateIcon from '@material-ui/icons/Create';
 import React from 'react';
 import { Tweet } from '../Components/Tweet';
+import { AddTweetForm } from './AddTweetForm';
+import { DialogBlock } from './DialogBlock';
 
 const useStyles = makeStyles((theme) => ({
   sidebar: {
     position: 'sticky',
     top: 0,
     maxWidth: 230,
-    marginRight: 30
+    marginRight: 30,
   },
   sidebarItem: {
     display: 'flex',
@@ -59,6 +61,13 @@ const useStyles = makeStyles((theme) => ({
 export const SideMenu = () => {
   const classes = useStyles();
 
+  const [visibleDialog, setVisibleDialog] = React.useState<boolean>(false);
+  const onClickOpenDialog = (): void => {
+    setVisibleDialog(true);
+  };
+  const handleCloseDialog = (): void => {
+    setVisibleDialog(false);
+  };
   return (
     <Paper className={classes.sidebar}>
       <div className={classes.sidebarItem}>
@@ -114,12 +123,22 @@ export const SideMenu = () => {
           </Hidden>
         </IconButton>
       </div>
-      <Button className={classes.sidebarTweetBtn} color="primary" variant="contained" fullWidth>
+      <Button
+        className={classes.sidebarTweetBtn}
+        color="primary"
+        variant="contained"
+        fullWidth
+        onClick={onClickOpenDialog}
+      >
         <Hidden smDown>Твитнуть</Hidden>
         <Hidden mdUp>
           <CreateIcon />
         </Hidden>
       </Button>
+
+      <DialogBlock title={''} visible={visibleDialog} handleCloseDialog={handleCloseDialog}>
+        <AddTweetForm />
+      </DialogBlock>
     </Paper>
   );
 };

@@ -15,11 +15,14 @@ const styles = (theme: Theme) =>
     root: {
       margin: 0,
       padding: theme.spacing(2),
+      height: 15,
+      display: 'flex',
+      alignItems: 'center'
     },
     closeButton: {
       position: 'absolute',
-      right: theme.spacing(1),
-      top: theme.spacing(1),
+      right: 0,
+      top: theme.spacing(0.5),
       color: theme.palette.grey[500],
     },
   });
@@ -46,7 +49,7 @@ const DialogTitle = withStyles(styles)((props: DialogTitleProps) => {
 
 const DialogContent = withStyles((theme: Theme) => ({
   root: {
-    padding: theme.spacing(2),
+    padding: 0,
     width: 450
   },
 }))(MuiDialogContent);
@@ -65,7 +68,7 @@ type PropsType = {
   children: React.ReactNode
 }
 
-export const SignDialog: React.FC<PropsType> = ({title, visible, handleCloseDialog, children}) => {
+export const DialogBlock: React.FC<PropsType> = ({title, visible, handleCloseDialog, children}) => {
   return (
     <Container>
       <Dialog onClose={handleCloseDialog} aria-labelledby="customized-dialog-title" open={visible}>

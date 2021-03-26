@@ -86,6 +86,7 @@ export const AddTweetForm: React.FC = () => {
           className={classes.addFormTextArea}
           value={text}
           onChange={handleTextChange}
+          rowsMax={20}
         />
       </div>
       <div className={classes.addFormBottom}>
