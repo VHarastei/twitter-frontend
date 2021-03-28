@@ -37,14 +37,6 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'inherit',
     resize: 'none',
   },
-
-  addFormBottomLine: {
-    height: 12,
-    backgroundColor: '#f7f9fa',
-    borderTop: '1px solid lightgray',
-    borderBottom: '1px solid lightgray',
-    zIndex: 101,
-  },
   addFormCircleProgress: {
     position: 'relative',
     width: 20,

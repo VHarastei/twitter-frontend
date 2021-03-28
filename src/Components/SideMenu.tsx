@@ -1,26 +1,13 @@
-import {
-  Button,
-  Container,
-  createStyles,
-  Grid,
-  Hidden,
-  IconButton,
-  InputBase,
-  makeStyles,
-  Paper,
-  Typography,
-  withStyles,
-} from '@material-ui/core';
+import { Button, Hidden, IconButton, makeStyles, Paper, Typography } from '@material-ui/core';
 import EmailAltIcon from '@material-ui/icons/AlternateEmailOutlined';
+import CreateIcon from '@material-ui/icons/Create';
 import EmailIcon from '@material-ui/icons/EmailOutlined';
 import ListIcon from '@material-ui/icons/ListAltOutlined';
 import NotificationsIcon from '@material-ui/icons/NotificationsNone';
 import PersonIcon from '@material-ui/icons/PersonOutlineOutlined';
 import SearchIcon from '@material-ui/icons/Search';
 import TwitterIcon from '@material-ui/icons/Twitter';
-import CreateIcon from '@material-ui/icons/Create';
 import React from 'react';
-import { Tweet } from '../Components/Tweet';
 import { AddTweetForm } from './AddTweetForm';
 import { DialogBlock } from './DialogBlock';
 

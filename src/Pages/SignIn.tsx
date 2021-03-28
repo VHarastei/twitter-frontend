@@ -1,4 +1,4 @@
-import { Box, Button, Container, makeStyles, TextField, Typography } from '@material-ui/core';
+import { Box, Button, makeStyles, TextField, Typography } from '@material-ui/core';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import React, { useState } from 'react';
 import { DialogBlock } from '../Components/DialogBlock';
@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
 export function SignIn() {
   const classes = useStyles();
   const [visible, setVisible] = useState<'signIn' | 'signUp'>();
-  console.log(visible);
+  
   const handlOpenSignInDialog = () => {
     setVisible('signIn');
   };

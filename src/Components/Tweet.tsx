@@ -51,7 +51,7 @@ type PropsType = {
   user: {
     fullname: string;
     username: string;
-    avatarSrc: string;
+    avatarUrl: string;
   };
   text: string;
 };
@@ -62,7 +62,7 @@ export const Tweet: React.FC<PropsType> = ({ user, text }) => {
   return (
     <Paper variant="outlined" square className={classes.tweet}>
       <Box>
-        <Avatar className={classes.tweetAvatar} src={user.avatarSrc}/>
+        <Avatar className={classes.tweetAvatar} src={user.avatarUrl}/>
       </Box>
       <Box>
         <Box className={classes.tweetBody}>

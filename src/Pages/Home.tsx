@@ -1,23 +1,25 @@
 import {
+  CircularProgress,
   Container,
   Grid,
   InputAdornment,
   makeStyles,
   Paper,
-  TextField,
   Typography,
-  withStyles,
 } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { AddTweetForm } from '../Components/AddTweetForm';
+import { RightSideBlock } from '../Components/RightSideBlock';
+import { SearchTextField } from '../Components/SearchTextField';
 import { SideMenu } from '../Components/SideMenu';
 import { Tweet } from '../Components/Tweet';
+import { fetchTweets } from '../store/ducks/tweets/actionCreators';
+import { selectIsTweetsLoading, selectTweetsItems } from '../store/ducks/tweets/selectors';
 
 const useStyles = makeStyles((theme) => ({
-  homeWrapper: {
-    height: '100vh',
-  },
+  homeWrapper: { height: '100vh' },
   contentWrapper: {
     height: '100%',
     borderTop: 0,
@@ -35,38 +37,6 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 800,
     padding: '10px 20px',
   },
-  addForm: {
-    padding: 20,
-  },
-  addFormBody: {
-    display: 'flex',
-    width: '100%',
-  },
-  addFormBottom: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginLeft: 48,
-  },
-
-  addFormBottomActions: {
-    marginTop: 10,
-    paddingLeft: '70',
-  },
-  addFormAvatar: {
-    width: 48,
-    height: 48,
-    marginRight: 8,
-  },
-  addFormTextArea: {
-    width: '100%',
-    border: 0,
-    fontSize: 20,
-    outline: 'none',
-    fontFamily: 'inherit',
-    resize: 'none',
-  },
-
   addFormBottomLine: {
     height: 12,
     backgroundColor: '#f7f9fa',
@@ -74,57 +44,22 @@ const useStyles = makeStyles((theme) => ({
     borderBottom: '1px solid lightgray',
     zIndex: 101,
   },
-  addFormCircleProgress: {
-    position: 'relative',
-    width: 20,
-    height: 20,
-    margin: '0 10px',
-    '& .MuiCircularProgress-root': {
-      position: 'absolute',
-    },
-  },
-  addFormBottomRight: {
-    display: 'flex',
-    alignItems: 'center',
+  tweetsLoading: {
+    textAlign: 'center',
+    marginTop: 30,
   },
 }));
 
-const SearchTextField = withStyles((theme) => ({
-  root: {
-    '& .MuiOutlinedInput-root': {
-      backgroundColor: '#e6ecf0',
-      borderRadius: 28,
-      padding: 0,
-      paddingLeft: 15,
-      '& .Mui-focused': {
-        backgroundColor: '#fff',
-        '& fieldset': {
-          borderWidth: 1,
-          borderColor: theme.palette.primary.main,
-        },
-        '& svg path': {
-          fill: theme.palette.primary.main,
-        },
-      },
-      '&:hover': {
-        '& fieldset': {
-          borderColor: theme.palette.primary.main,
-          //borderColor: 'transparent',
-        },
-      },
-      '& fieldset': {
-        borderColor: 'transparent',
-        borderWidth: 1,
-      },
-    },
-    '& .MuiOutlinedInput-input': {
-      padding: '12px 14px 14px 5px',
-    },
-  },
-}))(TextField);
-
 export const Home = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+
+  const tweets = useSelector(selectTweetsItems);
+  const isLoading = useSelector(selectIsTweetsLoading);
+
+  useEffect(() => {
+    dispatch(fetchTweets());
+  }, [dispatch]);
 
   return (
     <div className={classes.homeWrapper}>
@@ -141,85 +76,22 @@ export const Home = () => {
                 </Typography>
               </Paper>
               <Paper>
-                <AddTweetForm/>
+                <AddTweetForm />
                 <div className={classes.addFormBottomLine} />
               </Paper>
-              <Tweet
-                text={
-                  'The ancient Romans sacrificed a Dogecoin at the beginning of the Doge Days to appease the rage of Sirius, believing that the star was the cause of the hot, sultry weather.'
-                }
-                user={{
-                  fullname: 'Elon Musk',
-                  username: 'elonmusk',
-                  avatarSrc: '',
-                }}
-              />
-              <Tweet
-                text={
-                  'The ancient Romans sacrificed a Dogecoin at the beginning of the Doge Days to appease the rage of Sirius, believing that the star was the cause of the hot, sultry weather.'
-                }
-                user={{
-                  fullname: 'Elon Musk',
-                  username: 'elonmusk',
-                  avatarSrc: '',
-                }}
-              />
-              <Tweet
-                text={
-                  'The ancient Romans sacrificed a Dogecoin at the beginning of the Doge Days to appease the rage of Sirius, believing that the star was the cause of the hot, sultry weather.'
-                }
-                user={{
-                  fullname: 'Elon Musk',
-                  username: 'elonmusk',
-                  avatarSrc: '',
-                }}
-              />
-              <Tweet
-                text={
-                  'The ancient Romans sacrificed a Dogecoin at the beginning of the Doge Days to appease the rage of Sirius, believing that the star was the cause of the hot, sultry weather.'
-                }
-                user={{
-                  fullname: 'Elon Musk',
-                  username: 'elonmusk',
-                  avatarSrc: '',
-                }}
-              />
-              <Tweet
-                text={
-                  'The ancient Romans sacrificed a Dogecoin at the beginning of the Doge Days to appease the rage of Sirius, believing that the star was the cause of the hot, sultry weather.'
-                }
-                user={{
-                  fullname: 'Elon Musk',
-                  username: 'elonmusk',
-                  avatarSrc: '',
-                }}
-              />
-              <Tweet
-                text={
-                  'The ancient Romans sacrificed a Dogecoin at the beginning of the Doge Days to appease the rage of Sirius, believing that the star was the cause of the hot, sultry weather.'
-                }
-                user={{
-                  fullname: 'Elon Musk',
-                  username: 'elonmusk',
-                  avatarSrc: '',
-                }}
-              />
+              {isLoading ? (
+                <div className={classes.tweetsLoading}>
+                  <CircularProgress color={'primary'} thickness={5} />
+                </div>
+              ) : (
+                tweets.map((tweet) => {
+                  return <Tweet key={tweet._id} text={tweet.text} user={tweet.user} />;
+                })
+              )}
             </Paper>
           </Grid>
           <Grid item xs={3}>
-            <Paper>
-              <SearchTextField
-                variant="outlined"
-                placeholder="Поиск по твиттеру"
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <SearchIcon />
-                    </InputAdornment>
-                  ),
-                }}
-              />
-            </Paper>
+           <RightSideBlock />
           </Grid>
         </Grid>
       </Container>
