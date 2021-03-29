@@ -14,13 +14,14 @@ import {
 import SearchIcon from '@material-ui/icons/Search';
 import React from 'react';
 import { SearchTextField } from './SearchTextField';
+import { Tags } from './Tags';
 
-const useStyles = makeStyles((theme) => ({
+export const rightSideBlockStyles = makeStyles((theme) => ({
   rightSide: {
     paddingTop: 20,
     position: 'sticky',
     top: 0,
-    marginLeft: 30
+    marginLeft: 30,
   },
   rightSideBlock: {
     backgroundColor: '#f5f8fa',
@@ -55,11 +56,15 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       backgroundColor: '#edf3f6',
     },
+    '& a': {
+      color: 'inherit',
+      textDecoration: 'none'
+    }
   },
 }));
 
 export const RightSideBlock = () => {
-  const classes = useStyles();
+  const classes = rightSideBlockStyles();
 
   return (
     <div className={classes.rightSide}>
@@ -75,44 +80,14 @@ export const RightSideBlock = () => {
         }}
         fullWidth
       />
-      <Paper className={classes.rightSideBlock}>
-        <Paper className={classes.rightSideBlockHeader}>
-          <b>Актуальные темы</b>
-        </Paper>
-        
-        <List>
-        <Divider component="li" />
-          <ListItem className={classes.rightSideBlockItem}>
-            <ListItemText
-              primary="Musk"
-              secondary={
-                <Typography component="span" variant="body2">
-                  3 333
-                </Typography>
-              }
-            />
-          </ListItem>
-          <Divider component="li" />
-          <ListItem className={classes.rightSideBlockItem}>
-            <ListItemText
-              primary="Biba"
-              secondary={
-                <Typography component="span" variant="body2">
-                 1 488
-                </Typography>
-              }
-            />
-          </ListItem>
-          <Divider component="li" />
-        </List>
-      </Paper>
+      <Tags classes={classes} />
       <Paper className={classes.rightSideBlock}>
         <Paper className={classes.rightSideBlockHeader}>
           <b>Кого читать</b>
         </Paper>
-        
+
         <List>
-        <Divider component="li" />
+          <Divider component="li" />
           <ListItem className={classes.rightSideBlockItem}>
             <ListItemAvatar>
               <Avatar src="https://source.unsplash.com/random/100x100" />
@@ -125,7 +100,9 @@ export const RightSideBlock = () => {
                 </Typography>
               }
             />
-            <Button color="primary" variant='outlined'>Читать</Button>
+            <Button color="primary" variant="outlined">
+              Читать
+            </Button>
           </ListItem>
           <Divider component="li" />
         </List>

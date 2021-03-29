@@ -8,6 +8,7 @@ import PersonIcon from '@material-ui/icons/PersonOutlineOutlined';
 import SearchIcon from '@material-ui/icons/Search';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { AddTweetForm } from './AddTweetForm';
 import { DialogBlock } from './DialogBlock';
 
@@ -58,9 +59,11 @@ export const SideMenu = () => {
   return (
     <Paper className={classes.sidebar}>
       <div className={classes.sidebarItem}>
-        <IconButton color="primary">
-          <TwitterIcon fontSize="large" />
-        </IconButton>
+        <Link to="/home">
+          <IconButton color="primary">
+            <TwitterIcon fontSize="large" />
+          </IconButton>
+        </Link>
       </div>
       <div className={classes.sidebarItem}>
         <IconButton className={classes.sidebarItemIcon}>

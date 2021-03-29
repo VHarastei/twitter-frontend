@@ -4,8 +4,13 @@ import CommentIcon from '@material-ui/icons/ModeCommentOutlined';
 import RepeatIcon from '@material-ui/icons/RepeatOutlined';
 import ReplyIcon from '@material-ui/icons/ReplyOutlined';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
+  tweetWrapper: {
+    color:'inherit',
+    textDecoration: 'none'
+  },
   tweet: {
     display: 'flex',
     flexDirection: 'row',
@@ -32,6 +37,10 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between',
     marginLeft: -6,
   },
+  actionButtonContainer: {
+    display: 'flex',
+    alignItems: 'center',
+  },
   actionButton: {
     padding: 6,
     paddingBottom: 0,
@@ -48,6 +57,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 type PropsType = {
+  _id: string;
   user: {
     fullname: string;
     username: string;
@@ -56,14 +66,15 @@ type PropsType = {
   text: string;
 };
 
-export const Tweet: React.FC<PropsType> = ({ user, text }) => {
+export const Tweet: React.FC<PropsType> = ({ _id, user, text }) => {
   const classes = useStyles();
 
   return (
+      <Link to={`/home/tweet/${_id}`} className={classes.tweetWrapper}>
     <Paper variant="outlined" square className={classes.tweet}>
-      <Box>
-        <Avatar className={classes.tweetAvatar} src={user.avatarUrl}/>
-      </Box>
+        <Box>
+          <Avatar className={classes.tweetAvatar} src={user.avatarUrl} />
+        </Box>
       <Box>
         <Box className={classes.tweetBody}>
           <span>
@@ -75,25 +86,25 @@ export const Tweet: React.FC<PropsType> = ({ user, text }) => {
           <div>
             <Typography variant="body1">{text}</Typography>
             <div className={classes.actionButtons}>
-              <div>
+              <div className={classes.actionButtonContainer}>
                 <IconButton className={classes.actionButton}>
                   <CommentIcon />
                 </IconButton>
                 <span className={classes.actionNum}>1</span>
               </div>
-              <div>
+              <div className={classes.actionButtonContainer}>
                 <IconButton className={classes.actionButton}>
                   <RepeatIcon />
                 </IconButton>
                 <span className={classes.actionNum}>1</span>
               </div>
-              <div>
+              <div className={classes.actionButtonContainer}>
                 <IconButton className={classes.actionButton}>
                   <LikeIcon />
                 </IconButton>
                 <span className={classes.actionNum}>1</span>
               </div>
-              <div>
+              <div className={classes.actionButtonContainer}>
                 <IconButton className={classes.actionButton}>
                   <ReplyIcon />
                 </IconButton>
@@ -104,5 +115,6 @@ export const Tweet: React.FC<PropsType> = ({ user, text }) => {
         </Box>
       </Box>
     </Paper>
+      </Link>
   );
 };

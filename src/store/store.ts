@@ -1,3 +1,4 @@
+import { TagsState } from './ducks/tags/contracts/store';
 import { applyMiddleware, compose, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { TweetsState } from './ducks/tweets/contracts/store';
@@ -5,10 +6,11 @@ import { rootReducer } from './RootReducer';
 import { rootSaga } from './saga';
 
 export interface RootState {
-  tweets: TweetsState
+  tweets: TweetsState;
+  tags: TagsState;
 }
 
-const sagaMiddleware = createSagaMiddleware()
+const sagaMiddleware = createSagaMiddleware();
 
 const composeEnhancers =
   //@ts-ignore
@@ -20,7 +22,7 @@ const composeEnhancers =
 const enhancer = composeEnhancers(applyMiddleware(sagaMiddleware));
 const store = createStore(rootReducer, enhancer);
 
-sagaMiddleware.run(rootSaga)
+sagaMiddleware.run(rootSaga);
 
 //window.store = store;
 

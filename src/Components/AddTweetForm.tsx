@@ -72,7 +72,7 @@ export const AddTweetForm: React.FC = () => {
   return (
     <div className={classes.addForm}>
       <div className={classes.addFormBody}>
-        <Avatar src="biba" className={classes.addFormAvatar} />
+        <Avatar className={classes.addFormAvatar} />
         <TextareaAutosize
           placeholder="Что происходит?"
           className={classes.addFormTextArea}
