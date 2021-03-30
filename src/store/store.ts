@@ -4,9 +4,11 @@ import createSagaMiddleware from 'redux-saga';
 import { TweetsState } from './ducks/tweets/contracts/store';
 import { rootReducer } from './RootReducer';
 import { rootSaga } from './saga';
+import { TweetState } from './ducks/tweet/contracts/store';
 
 export interface RootState {
   tweets: TweetsState;
+  tweet: TweetState;
   tags: TagsState;
 }
 

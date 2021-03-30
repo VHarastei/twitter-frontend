@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Route } from 'react-router';
 import { AddTweetForm } from '../Components/AddTweetForm';
 import { BackButton } from '../Components/BackButton';
+import { FullScreenTweet } from '../Components/FullScreenTweet';
 import { RightSideBlock } from '../Components/RightSideBlock';
 import { SearchTextField } from '../Components/SearchTextField';
 import { SideMenu } from '../Components/SideMenu';
@@ -92,6 +93,9 @@ export const Home = () => {
                   </Typography>
                 </Route>
               </Paper>
+                <Route path="/home/tweet/:id">
+                  <FullScreenTweet/>
+                </Route>
               <Route path={['/home', '/home/search']} exact>
                 <Paper>
                   <AddTweetForm />
