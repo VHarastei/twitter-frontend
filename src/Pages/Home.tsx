@@ -2,13 +2,10 @@ import {
   CircularProgress,
   Container,
   Grid,
-  IconButton,
-  InputAdornment,
   makeStyles,
   Paper,
   Typography,
 } from '@material-ui/core';
-import SearchIcon from '@material-ui/icons/Search';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Route } from 'react-router';
@@ -16,7 +13,6 @@ import { AddTweetForm } from '../Components/AddTweetForm';
 import { BackButton } from '../Components/BackButton';
 import { FullScreenTweet } from '../Components/FullScreenTweet';
 import { RightSideBlock } from '../Components/RightSideBlock';
-import { SearchTextField } from '../Components/SearchTextField';
 import { SideMenu } from '../Components/SideMenu';
 import { Tweet } from '../Components/Tweet';
 import { fetchTags } from '../store/ducks/tags/actionCreators';
@@ -93,9 +89,9 @@ export const Home = () => {
                   </Typography>
                 </Route>
               </Paper>
-                <Route path="/home/tweet/:id">
-                  <FullScreenTweet/>
-                </Route>
+              <Route path="/home/tweet/:id">
+                <FullScreenTweet />
+              </Route>
               <Route path={['/home', '/home/search']} exact>
                 <Paper>
                   <AddTweetForm />

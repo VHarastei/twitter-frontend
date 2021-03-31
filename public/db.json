@@ -1,6 +1,7 @@
 {
   "tweets": [
     {
+      "id": 1,
       "_id": "606059d4a2f39c3418ed691f",
       "text": "Sint deserunt velit et nulla minim qui eiusmod irure sint Lorem cupidatat sunt ullamco. Velit elit ea duis ex excepteur sint. Est pariatur exercitation nulla velit ipsum duis ex in.",
       "user": {
@@ -9,87 +10,6 @@
         "avatarUrl": "https://source.unsplash.com/random/100x100?4"
       }
     },
-    {
-      "_id": "606059d454321732c3f61942",
-      "text": "Est et consequat deserunt laboris in consectetur qui labore amet id duis. Aute quis irure cupidatat in ad exercitation id consectetur tempor aliqua Lorem amet. Fugiat consequat ut et incididunt.",
-      "user": {
-        "fullname": "Clare Mooney",
-        "username": "mccarthy",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?1"
-      }
-    },
-    {
-      "_id": "606059d4212283fddf707f8e",
-      "text": "Commodo sit cupidatat labore in ex. Ipsum non quis reprehenderit fugiat cillum aliquip aliqua eu ut duis pariatur labore elit. Officia qui sit dolor voluptate proident duis nulla.",
-      "user": {
-        "fullname": "Ramsey Jenkins",
-        "username": "patrica",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?3"
-      }
-    },
-    {
-      "_id": "606059d415637182408c5830",
-      "text": "Labore aliqua aliquip sunt enim magna ad ipsum ut fugiat veniam officia. Enim exercitation ipsum consectetur duis labore ut qui pariatur esse. Mollit excepteur veniam eiusmod id in dolore ex reprehenderit cupidatat exercitation.",
-      "user": {
-        "fullname": "Kathryn Dale",
-        "username": "sosa",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
-      }
-    },
-    {
-      "_id": "606059d440ca8fad2b7d76e4",
-      "text": "Irure culpa occaecat occaecat in irure mollit non cillum cupidatat nisi esse ut. Enim ipsum deserunt mollit officia sint aute proident dolore duis velit consequat. Aliqua duis ut qui ea labore.",
-      "user": {
-        "fullname": "Morse Rosa",
-        "username": "alba",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?2"
-      }
-    },
-    {
-      "_id": "606059d481d0a152e552009b",
-      "text": "Ut et tempor veniam velit. Velit nisi nisi ad consectetur aute Lorem. Labore laborum commodo ut exercitation laborum ullamco magna magna cupidatat non.",
-      "user": {
-        "fullname": "Mcgowan Murphy",
-        "username": "frost",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
-      }
-    },
-    {
-      "_id": "606059d43df1d7a44328b581",
-      "text": "Commodo occaecat cupidatat in aliquip enim. In minim esse fugiat deserunt. Veniam exercitation aliquip cillum aliquip cillum in laboris reprehenderit veniam.",
-      "user": {
-        "fullname": "Koch Grimes",
-        "username": "carson",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?1"
-      }
-    },
-    {
-      "_id": "606059d45a38f05af1e54534",
-      "text": "Dolore excepteur ullamco quis sunt laborum esse occaecat qui ut laboris eiusmod. Commodo voluptate esse consequat esse et id tempor non irure esse Lorem nostrud nulla. Veniam elit et exercitation pariatur.",
-      "user": {
-        "fullname": "Cobb Hampton",
-        "username": "joanne",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?2"
-      }
-    },
-    {
-      "_id": "606059d405332a442f1cbabc",
-      "text": "Dolor id incididunt elit officia qui ea voluptate sint esse non excepteur. Nisi eu laboris consectetur ea pariatur pariatur. Adipisicing esse minim ullamco reprehenderit cillum sint consectetur duis ex Lorem sunt.",
-      "user": {
-        "fullname": "Marva Booth",
-        "username": "robbie",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?2"
-      }
-    },
-    {
-      "_id": "606059d442415b567b0331d3",
-      "text": "Nulla irure pariatur voluptate id magna. Et exercitation nulla non amet incididunt laboris consectetur ea anim velit deserunt. Nisi in id reprehenderit officia et sit ipsum magna ipsum aliquip.",
-      "user": {
-        "fullname": "Maryellen Dalton",
-        "username": "faye",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
-      }
-    }
   ],
   "user": {
     "_id": "606059d4a2f39c3418ed691f",

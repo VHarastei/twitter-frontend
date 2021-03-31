@@ -1,24 +1,17 @@
 import {
-  Avatar,
-  Button,
+  CircularProgress,
   Divider,
-  InputAdornment,
   List,
   ListItem,
-  ListItemAvatar,
   ListItemText,
-  makeStyles,
   Paper,
   Typography,
-  CircularProgress,
 } from '@material-ui/core';
-import SearchIcon from '@material-ui/icons/Search';
 import React, { Fragment } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { selectIsTagsLoading, selectTagsItems } from '../store/ducks/tags/selectors';
 import { rightSideBlockStyles } from './RightSideBlock';
-import { SearchTextField } from './SearchTextField';
 
 type PropsType = {
   classes: ReturnType<typeof rightSideBlockStyles>;

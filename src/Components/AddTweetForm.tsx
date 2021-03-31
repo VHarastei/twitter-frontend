@@ -4,7 +4,12 @@ import IconButton from '@material-ui/core/IconButton';
 import { makeStyles } from '@material-ui/core/styles';
 import { ImageOutlined } from '@material-ui/icons';
 import EmojiIcon from '@material-ui/icons/SentimentSatisfiedOutlined';
+import { Alert } from '@material-ui/lab';
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchAddTweet } from '../store/ducks/tweets/actionCreators';
+import { AddFormState } from '../store/ducks/tweets/contracts/store';
+import { selectAddFormState } from '../store/ducks/tweets/selectors';
 
 const useStyles = makeStyles((theme) => ({
   addForm: {
@@ -55,17 +60,18 @@ const useStyles = makeStyles((theme) => ({
 export const AddTweetForm: React.FC = () => {
   const MAX_LENGTH = 280;
   const classes = useStyles();
-
+  const dispatch = useDispatch();
   const [text, setText] = React.useState('');
   const percentTextLength = Math.round((text.length / MAX_LENGTH) * 100);
   const textCount = MAX_LENGTH - text.length;
-
+  const addFormState = useSelector(selectAddFormState);
   const handleTextChange = (e: React.FormEvent<HTMLTextAreaElement>): void => {
     if (e.currentTarget) {
       setText(e.currentTarget.value);
     }
   };
   const handleTweetClick = (): void => {
+    dispatch(fetchAddTweet(text));
     setText('');
   };
 
@@ -90,7 +96,6 @@ export const AddTweetForm: React.FC = () => {
             <EmojiIcon style={{ fontSize: 26 }} />
           </IconButton>
         </div>
-
         <div className={classes.addFormBottomRight}>
           {text && (
             <>
@@ -116,13 +121,20 @@ export const AddTweetForm: React.FC = () => {
           <Button
             color="primary"
             variant="contained"
-            disabled={text.length >= MAX_LENGTH}
+            disabled={!text || text.length >= MAX_LENGTH}
             onClick={handleTweetClick}
           >
-            Твитнуть
+            {addFormState === AddFormState.LOADING ? (
+              <CircularProgress size={16} color="inherit" />
+            ) : (
+              'Твитнуть'
+            )}
           </Button>
         </div>
       </div>
+      {addFormState === AddFormState.ERROR && (
+        <Alert severity="error">Ошибка при добавлении твита</Alert>
+      )}
     </div>
   );
 };
