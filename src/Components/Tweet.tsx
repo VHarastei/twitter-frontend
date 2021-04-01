@@ -8,8 +8,8 @@ import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   tweetWrapper: {
-    color:'inherit',
-    textDecoration: 'none'
+    color: 'inherit',
+    textDecoration: 'none',
   },
   tweet: {
     display: 'flex',
@@ -70,51 +70,51 @@ export const Tweet: React.FC<PropsType> = ({ _id, user, text }) => {
   const classes = useStyles();
 
   return (
-      <Link to={`/home/tweet/${_id}`} className={classes.tweetWrapper}>
-    <Paper variant="outlined" square className={classes.tweet}>
+    <Link to={`/home/tweet/${_id}`} className={classes.tweetWrapper}>
+      <Paper variant="outlined" square className={classes.tweet}>
         <Box>
           <Avatar className={classes.tweetAvatar} src={user.avatarUrl} />
         </Box>
-      <Box>
-        <Box className={classes.tweetBody}>
-          <span>
-            <b>{user.fullname}</b>
-          </span>
-          <span className={classes.tweetUserLink}>@{user.username}</span>
-          <span className={classes.tweetUserLink}>·</span>
-          <span className={classes.tweetUserLink}>1 ч</span>
-          <div>
-            <Typography variant="body1">{text}</Typography>
-            <div className={classes.actionButtons}>
-              <div className={classes.actionButtonContainer}>
-                <IconButton className={classes.actionButton}>
-                  <CommentIcon />
-                </IconButton>
-                <span className={classes.actionNum}>1</span>
-              </div>
-              <div className={classes.actionButtonContainer}>
-                <IconButton className={classes.actionButton}>
-                  <RepeatIcon />
-                </IconButton>
-                <span className={classes.actionNum}>1</span>
-              </div>
-              <div className={classes.actionButtonContainer}>
-                <IconButton className={classes.actionButton}>
-                  <LikeIcon />
-                </IconButton>
-                <span className={classes.actionNum}>1</span>
-              </div>
-              <div className={classes.actionButtonContainer}>
-                <IconButton className={classes.actionButton}>
-                  <ReplyIcon />
-                </IconButton>
-                <span className={classes.actionNum}>1</span>
+        <Box>
+          <div className={classes.tweetBody}>
+            <span>
+              <b>{user.fullname}</b>
+            </span>
+            <span className={classes.tweetUserLink}>@{user.username}</span>
+            <span className={classes.tweetUserLink}>·</span>
+            <span className={classes.tweetUserLink}>1 ч</span>
+            <div>
+              <Typography variant="body1">{text}</Typography>
+              <div className={classes.actionButtons}>
+                <div className={classes.actionButtonContainer}>
+                  <IconButton className={classes.actionButton}>
+                    <CommentIcon />
+                  </IconButton>
+                  <span className={classes.actionNum}>1</span>
+                </div>
+                <div className={classes.actionButtonContainer}>
+                  <IconButton className={classes.actionButton}>
+                    <RepeatIcon />
+                  </IconButton>
+                  <span className={classes.actionNum}>1</span>
+                </div>
+                <div className={classes.actionButtonContainer}>
+                  <IconButton className={classes.actionButton}>
+                    <LikeIcon />
+                  </IconButton>
+                  <span className={classes.actionNum}>1</span>
+                </div>
+                <div className={classes.actionButtonContainer}>
+                  <IconButton className={classes.actionButton}>
+                    <ReplyIcon />
+                  </IconButton>
+                  <span className={classes.actionNum}>1</span>
+                </div>
               </div>
             </div>
           </div>
         </Box>
-      </Box>
-    </Paper>
-      </Link>
+      </Paper>
+    </Link>
   );
 };

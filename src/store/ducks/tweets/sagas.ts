@@ -25,8 +25,8 @@ export function* fetchAddTweetRequest({ payload }: FetchAddTweetActionInterface)
       text: payload,
       user: {
         fullname: 'VHarastei',
-        username: 'vh',
-        avatarUrl: 'https://source.unsplash.com/random/100x100?1',
+        username: 'vhrst',
+        avatarUrl: 'https://memepedia.ru/wp-content/uploads/2019/11/honklhonk.jpg',
       },
     };
     const item: Tweet = yield call(TweetsApi.addTweet, data);

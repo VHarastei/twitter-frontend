@@ -10,10 +10,30 @@
         "avatarUrl": "https://source.unsplash.com/random/100x100?4"
       }
     },
+    {
+      "_id": "wwsanc9idz",
+      "text": "Nice! Amazon ranked #1 best managed company. Definitely the result of strong teamwork from people who care deeply and passionately about customers, their fellow employees, and the environment. Huge thank you and kudos to all Amazonians.",
+      "user": {
+        "fullname": "VHarastei",
+        "username": "vhrst",
+        "avatarUrl": "https://memepedia.ru/wp-content/uploads/2019/11/honklhonk.jpg"
+      },
+      "id": 2
+    },
+    {
+      "_id": "i6uxvx5seu",
+      "text": "have a nice biba",
+      "user": {
+        "fullname": "VHarastei",
+        "username": "vhrst",
+        "avatarUrl": "https://memepedia.ru/wp-content/uploads/2019/11/honklhonk.jpg"
+      },
+      "id": 3
+    }
   ],
   "user": {
     "_id": "606059d4a2f39c3418ed691f",
-    "fullname": "VHarastei",
+    "fullname": "VHa npm run json-serverrastei",
     "username": "vh",
     "avatarUrl": "https://source.unsplash.com/random/100x100?1"
   },

@@ -121,7 +121,7 @@ export const AddTweetForm: React.FC = () => {
           <Button
             color="primary"
             variant="contained"
-            disabled={!text || text.length >= MAX_LENGTH}
+            disabled={addFormState === AddFormState.LOADING || !text || text.length >= MAX_LENGTH}
             onClick={handleTweetClick}
           >
             {addFormState === AddFormState.LOADING ? (
